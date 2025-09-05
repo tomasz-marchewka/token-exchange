@@ -17,7 +17,7 @@ type ButtonVariant =
   imports: [CommonModule, MatButtonModule],
   templateUrl: './tex-button.component.html',
   styleUrls: ['./tex-button.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class TexButtonComponent {
   @Input() color: ThemePalette;

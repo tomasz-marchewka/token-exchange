@@ -10,7 +10,7 @@ import { ThemePalette } from '@angular/material/core';
   imports: [TexButtonComponent],
   standalone: true,
 })
-class TestHostComponent {
+export class TestHostComponent {
   color: ThemePalette;
   variant: 'basic' | 'raised' | 'stroked' | 'flat' | 'icon' | 'fab' | 'mini-fab' = 'basic';
   disabled = false;
