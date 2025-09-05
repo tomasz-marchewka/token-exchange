@@ -2,6 +2,20 @@
 
 A secure and reliable web application designed for seamless token swapping. It provides real-time market data, transparent transactions, and an intuitive interface for both beginners and advanced users.
 
+## Prerequisites
+
+Make sure you have Node.js version `v22.18.0` installed. We recommend using [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions.
+
+```bash
+nvm use
+```
+
+Install Nx globally:
+
+```bash
+npm add --global nx
+```
+
 ## Getting Started
 
 This project is built within an [Nx](https://nx.dev) monorepo. Make sure you have Node.js and npm (or your preferred package manager) installed.
