@@ -1,1 +1,1 @@
-export * from './lib/ui/ui';
+export * from './tex-button/tex-button.component';
