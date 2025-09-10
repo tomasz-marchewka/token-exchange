@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+@use '../theme/colors.scss' as *;
+
+:host {
+  display: inline-block;
+
+  @include mat.button-overrides(
+    (
+      filled-container-shape: 8px,
+      tonal-container-shape: 8px,
+      outlined-container-shape: 8px,
+
+      filled-label-text-size: 16px,
+      tonal-label-text-size: 16px,
+      outlined-label-text-size: 16px,
+
+      filled-horizontal-padding: 16px,
+      tonal-horizontal-padding: 16px,
+      outlined-horizontal-padding: 16px,
+
+      filled-container-height: 44px,
+      tonal-container-height: 44px,
+      outlined-container-height: 44px,
+
+      filled-disabled-container-color: rgba($primary-500, 0.6),
+      filled-disabled-label-text-color: $neutral,
+
+      outlined-label-text-color: $text-high,
+      outlined-disabled-label-text-color: rgba($text-high, 0.6),
+      outlined-disabled-outline-color: rgba($text-mid, 0.6),
+    )
+  );
+}

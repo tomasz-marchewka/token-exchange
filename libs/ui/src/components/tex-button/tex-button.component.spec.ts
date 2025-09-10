@@ -1,19 +1,34 @@
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TexButtonComponent } from './tex-button.component';
 import { By } from '@angular/platform-browser';
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { ButtonAppearance } from './tex-button.constants';
+import { vi } from 'vitest';
 
 @Component({
-  template: `<tex-button [color]="color" [variant]="variant" [disabled]="disabled">Click me</tex-button>`,
+  template: `
+    <tex-button
+      [appearance]="appearance"
+      [disabled]="disabled"
+      [customClass]="customClass"
+      (clicked)="onClick()"
+    >
+      Click me
+    </tex-button>
+  `,
   imports: [TexButtonComponent],
   standalone: true,
 })
-export class TestHostComponent {
-  color: ThemePalette;
-  variant: 'basic' | 'raised' | 'stroked' | 'flat' | 'icon' | 'fab' | 'mini-fab' = 'basic';
+class TestHostComponent {
+  appearance: ButtonAppearance = 'filled';
   disabled = false;
+  customClass: string;
+  clicked = new EventEmitter<void>();
+
+  onClick() {
+    this.clicked.emit();
+  }
 }
 
 describe('TexButtonComponent', () => {
@@ -34,18 +49,6 @@ describe('TexButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have default variant "basic"', () => {
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.attributes['mat-button']).toBeDefined();
-  });
-
-  it('should apply the correct variant', () => {
-    component.variant = 'stroked';
-    fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.attributes['mat-stroked-button']).toBeDefined();
-  });
-
   it('should be disabled', () => {
     component.disabled = true;
     fixture.detectChanges();
@@ -53,15 +56,22 @@ describe('TexButtonComponent', () => {
     expect(button.properties['disabled']).toBe(true);
   });
 
-  it('should apply the correct color', () => {
-    component.color = 'primary';
-    fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.classes['mat-primary']).toBe(true);
-  });
-
   it('should project content', () => {
     const button = fixture.debugElement.query(By.css('button'));
     expect(button.nativeElement.textContent).toContain('Click me');
+  });
+
+  it('should apply custom css class', () => {
+    component.customClass = 'my-custom-class';
+    fixture.detectChanges();
+    const button = fixture.debugElement.query(By.css('button'));
+    expect(button.classes['my-custom-class']).toBe(true);
+  });
+
+  it('should emit click event when clicked', () => {
+    const spy = vi.spyOn(component, 'onClick');
+    const button = fixture.debugElement.query(By.css('button'));
+    button.nativeElement.click();
+    expect(spy).toHaveBeenCalled();
   });
 });

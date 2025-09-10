@@ -1,0 +1,8 @@
+<button
+  [matButton]="appearance"
+  [disabled]="disabled"
+  (click)="clicked.emit()"
+  [ngClass]="customClass"
+>
+  <ng-content></ng-content>
+</button>

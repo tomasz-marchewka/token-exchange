@@ -1,1 +1,1 @@
-export * from './tex-button/tex-button.component';
+export * from './components/tex-button/tex-button.component';

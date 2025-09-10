@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@use './palettes.scss' as *;
+
+// Include the common styles for Angular Material.
+@include mat.core();
+
+@include mat.theme(
+  (
+    color: (
+      primary: $primary-palette,
+      secondary: $primary-palette,
+      tertiary: $tertiary-palette,
+      theme-type: dark,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Open Sans,
+      bold-weight: 800,
+      medium-weight: 400,
+      regular-weight: 300,
+      font-size: 16px,
+    ),
+    density: 0,
+  )
+);

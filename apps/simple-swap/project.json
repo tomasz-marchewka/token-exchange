@@ -12,7 +12,7 @@
       "options": {
         "outputPath": "dist/apps/simple-swap",
         "browser": "apps/simple-swap/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "apps/simple-swap/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
