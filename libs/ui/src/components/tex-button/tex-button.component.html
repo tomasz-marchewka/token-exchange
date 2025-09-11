@@ -1,8 +1,8 @@
 <button
-  [matButton]="appearance"
-  [disabled]="disabled"
+  [matButton]="appearance()"
+  [disabled]="disabled()"
   (click)="clicked.emit()"
-  [ngClass]="customClass"
+  [ngClass]="customClass()"
 >
   <ng-content></ng-content>
 </button>

@@ -1,10 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/angular';
+import { applicationConfig, moduleMetadata } from '@storybook/angular';
 import { TexButtonComponent } from './tex-button.component';
-import { expect } from 'storybook/test';
+import { provideUiIcons } from '../../services/icon-registry-service/icon-registry-service';
+import { TexIconComponent } from '../tex-icon/tex-icon.component';
 
 const meta: Meta<TexButtonComponent> = {
   component: TexButtonComponent,
   title: 'TexButtonComponent',
+  decorators: [
+    applicationConfig({
+      providers: [provideUiIcons()],
+    }),
+    moduleMetadata({
+      imports: [TexIconComponent],
+    }),
+  ],
 };
 export default meta;
 
@@ -37,5 +47,15 @@ export const Ghost: Story = {
   },
   render: (args) => ({
     template: `<tex-button appearance=${args.appearance} [disabled]=${args.disabled}>Ghost</tex-button>`,
+  }),
+};
+
+export const IconButton: Story = {
+  args: {
+    appearance: 'outlined',
+    disabled: false,
+  },
+  render: (args) => ({
+    template: `<tex-button appearance=${args.appearance} [disabled]=${args.disabled}><tex-icon icon="crypto_icon"></tex-icon>Button</tex-button>`,
   }),
 };

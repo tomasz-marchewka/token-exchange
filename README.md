@@ -34,6 +34,18 @@ npm install
 
 All commands should be run from the root of the project.
 
+### Storybook
+
+This project uses [Storybook](https://storybook.js.org/) for UI component development and testing. The Storybook is configured for the `ui` library.
+
+To launch Storybook, run the following command:
+
+```bash
+nx storybook ui
+```
+
+This will open Storybook in your browser, where you can view and interact with all the components from the `ui` library.
+
 ### Running the Application
 
 To start the development server for the `simple-swap` application:

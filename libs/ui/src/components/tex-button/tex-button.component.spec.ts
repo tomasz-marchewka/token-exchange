@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TexButtonComponent } from './tex-button.component';
 import { By } from '@angular/platform-browser';
 import { Component, EventEmitter } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
 import { ButtonAppearance } from './tex-button.constants';
 import { vi } from 'vitest';
 
@@ -18,12 +17,11 @@ import { vi } from 'vitest';
     </tex-button>
   `,
   imports: [TexButtonComponent],
-  standalone: true,
 })
 class TestHostComponent {
   appearance: ButtonAppearance = 'filled';
   disabled = false;
-  customClass: string;
+  customClass = '';
   clicked = new EventEmitter<void>();
 
   onClick() {
