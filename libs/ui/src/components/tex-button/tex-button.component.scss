@@ -1,8 +1,10 @@
 @use '@angular/material' as mat;
-@use '../theme/colors.scss' as *;
+@use '../../theme/colors.scss' as *;
 
 :host {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
   @include mat.button-overrides(
     (
@@ -30,4 +32,13 @@
       outlined-disabled-outline-color: rgba($text-mid, 0.6),
     )
   );
+
+  ::ng-deep {
+    .mdc-button__label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+  }
 }

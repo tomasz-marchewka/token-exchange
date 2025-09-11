@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ButtonAppearance } from './tex-button.constants';
 
@@ -10,8 +10,8 @@ import { ButtonAppearance } from './tex-button.constants';
   styleUrl: './tex-button.component.scss',
 })
 export class TexButtonComponent {
-  @Input() disabled = false;
-  @Input() appearance: ButtonAppearance = 'filled';
-  @Input() customClass: string;
-  @Output() clicked = new EventEmitter<void>();
+  appearance = input.required<ButtonAppearance>();
+  disabled = input<boolean>(false);
+  customClass = input<string>();
+  clicked = output<void>();
 }
