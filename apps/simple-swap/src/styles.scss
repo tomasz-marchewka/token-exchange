@@ -1,1 +1,7 @@
 @use 'libs/ui/src//theme/theme.scss' as *;
+@use 'libs/ui/src//theme/colors.scss' as *;
+
+body {
+  background: $base;
+  color: $text-high;
+}

@@ -1,31 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MatIconModule } from '@angular/material/icon';
 import { TexIconComponent } from './tex-icon.component';
-import { TexIcon } from '../../constants/icons';
 import { provideUiIcons } from '../../services/icon-registry-service/icon-registry-service';
+import { TexIcon } from '../../types/icons.types';
 
-// Test Host Component
 @Component({
+  standalone: true,
+  imports: [TexIconComponent], // Import the component under test
   template: `<tex-icon [icon]="testIcon"></tex-icon>`,
-  imports: [TexIconComponent],
 })
-class TestHostComponent {
+class TexIconTestHostComponent {
   testIcon: TexIcon = 'crypto_icon';
 }
 
 describe('TexIconComponent', () => {
-  let fixture: ComponentFixture<TestHostComponent>;
-  let testHost: TestHostComponent;
+  let fixture: ComponentFixture<TexIconTestHostComponent>;
+  let testHost: TexIconTestHostComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestHostComponent, TexIconComponent, MatIconModule],
+      imports: [TexIconTestHostComponent],
       providers: [provideUiIcons()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TestHostComponent);
+    fixture = TestBed.createComponent(TexIconTestHostComponent);
     testHost = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -37,7 +36,7 @@ describe('TexIconComponent', () => {
     expect(iconComponent).toBeTruthy();
   });
 
-  it('should render mat-icon with the correct svgIcon input', () => {
+  it('should render mat-icon with the correct svgIcon name', () => {
     // Check initial icon
     let matIcon = fixture.debugElement.query(By.css('mat-icon')).nativeElement;
     expect(matIcon.getAttribute('data-mat-icon-name')).toBe('crypto_icon');

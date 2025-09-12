@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { iconsList } from '../../constants/icons';
+import { IconsList } from '../../constants/icons.constants';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class IconRegistryService {
   private domSanitizer = inject(DomSanitizer);
 
   registerIcons(): void {
-    iconsList.forEach((icon) => {
+    IconsList.forEach((icon) => {
       this.matIconRegistry.addSvgIcon(
         icon,
         this.domSanitizer.bypassSecurityTrustResourceUrl(

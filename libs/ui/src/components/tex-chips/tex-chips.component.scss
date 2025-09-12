@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@use '../../theme/colors.scss' as *;
+
+:host {
+  @include mat.chips-overrides(
+    (
+      container-height: 35px,
+
+      label-text-color: $text-high,
+      elevated-container-color: $base,
+      outline-color: transparent,
+
+      selected-label-text-color: $primary-500,
+      elevated-selected-container-color: $neutral,
+    )
+  );
+}

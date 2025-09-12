@@ -23,3 +23,9 @@
     density: 0,
   )
 );
+
+mat-chip {
+  span[matchipaction] {
+    cursor: pointer;
+  }
+}
