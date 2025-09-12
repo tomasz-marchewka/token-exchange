@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TexButtonComponent } from './tex-button.component';
 import { By } from '@angular/platform-browser';
 import { Component, EventEmitter } from '@angular/core';
-import { ButtonAppearance } from './tex-button.constants';
+import { ButtonAppearance } from '../../types/buttons.types';
 import { vi } from 'vitest';
 
 @Component({

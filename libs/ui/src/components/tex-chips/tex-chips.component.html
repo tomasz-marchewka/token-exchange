@@ -1,0 +1,7 @@
+<mat-chip-set [ariaLabel]="ariaLabel()">
+  @for (chip of chips(); track chip.id) {
+  <tex-chip [active]="chip.id === active()" (click)="clicked.emit(chip.id)">
+    {{ chip.name }}
+  </tex-chip>
+  }
+</mat-chip-set>

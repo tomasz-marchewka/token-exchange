@@ -1,0 +1,13 @@
+<nav class="navigation-container">
+  @for(navigation of navLinks; track navigation.id) {
+  <a
+    class="navigation-link"
+    tex-chip
+    [active]="active() === navigation.id"
+    [routerLink]="navigation.link"
+    (isActiveChange)="activeChange(navigation.id, $event)"
+    routerLinkActive="active"
+    >{{navigation.name}}</a
+  >
+  }
+</nav>
