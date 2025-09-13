@@ -69,7 +69,6 @@ describe('TexChipsComponent', () => {
     expect(chipComponents[1].active()).toBe(false);
     expect(chipComponents[2].active()).toBe(false);
 
-    // Change active chip
     testHost.activeChipId = 3;
     fixture.detectChanges();
 
@@ -85,7 +84,6 @@ describe('TexChipsComponent', () => {
       By.directive(TexChipComponent)
     );
 
-    // Click the second chip
     const secondChipElement = chipElements[1].nativeElement;
     secondChipElement.click();
     fixture.detectChanges();

@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+@use '../../theme/colors.scss' as *;
+
+:host {
+  @include mat.menu-overrides(
+    (
+      container-color: $neutral,
+      container-shape: 16px,
+    )
+  );
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  padding: 16px 0;
+  color: $text-high;
+
+  &__label {
+    margin: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+
+    color: $text-high;
+
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    padding: 12px 36px;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    &:hover {
+      background: $base;
+    }
+  }
+
+  &__button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__button-name {
+    line-height: 24px;
+  }
+
+  &__button-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-mid;
+  }
+}

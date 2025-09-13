@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { vi } from 'vitest';
 
 import { IconRegistryService } from './icon-registry-service';
+import { IconsList } from '../../constants/icons.constants';
 
 const matIconRegistryMock = {
   addSvgIcon: vi.fn(),
@@ -48,7 +49,7 @@ describe('IconRegistryService', () => {
 
       service.registerIcons();
 
-      expect(registry.addSvgIcon).toHaveBeenCalledTimes(2);
+      expect(registry.addSvgIcon).toHaveBeenCalledTimes(IconsList.length);
 
       expect(sanitizerSpy).toHaveBeenCalledWith('assets/icons/crypto_icon.svg');
       expect(registry.addSvgIcon).toHaveBeenCalledWith(
