@@ -7,7 +7,7 @@ import { TexIcon } from '../../types/icons.types';
 
 @Component({
   standalone: true,
-  imports: [TexIconComponent], // Import the component under test
+  imports: [TexIconComponent],
   template: `<tex-icon [icon]="testIcon"></tex-icon>`,
 })
 class TexIconTestHostComponent {
@@ -37,11 +37,9 @@ describe('TexIconComponent', () => {
   });
 
   it('should render mat-icon with the correct svgIcon name', () => {
-    // Check initial icon
     let matIcon = fixture.debugElement.query(By.css('mat-icon')).nativeElement;
     expect(matIcon.getAttribute('data-mat-icon-name')).toBe('crypto_icon');
 
-    // Change the icon and verify again
     testHost.testIcon = 'keyboard_arrow_down';
     fixture.detectChanges();
 

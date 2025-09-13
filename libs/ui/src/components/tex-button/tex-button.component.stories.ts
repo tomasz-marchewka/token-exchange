@@ -50,6 +50,16 @@ export const Ghost: Story = {
   }),
 };
 
+export const Default: Story = {
+  args: {
+    appearance: 'text',
+    disabled: false,
+  },
+  render: (args) => ({
+    template: `<tex-button appearance=${args.appearance} [disabled]=${args.disabled}>Default</tex-button>`,
+  }),
+};
+
 export const IconButton: Story = {
   args: {
     appearance: 'outlined',

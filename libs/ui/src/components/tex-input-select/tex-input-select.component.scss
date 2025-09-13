@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+@use '../../theme/colors.scss' as *;
+
+:host {
+  @include mat.form-field-overrides(
+    (
+      hover-state-layer-opacity: 0,
+      filled-container-color: $neutral,
+      filled-input-text-color: $text-high,
+      filled-focus-label-text-color: $text-high,
+      filled-label-text-color: $text-high,
+      filled-caret-color: $text-high,
+      filled-label-text-size: 18px,
+      filled-label-text-weight: 400,
+      container-text-size: 36px,
+    )
+  );
+  width: 100%;
+}
+
+input {
+  margin-top: 8px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.form-field-wrapper {
+  width: 100%;
+
+  &.mat-focused {
+    ::ng-deep {
+      .mat-mdc-text-field-wrapper {
+        border: 1px solid $primary-500;
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  input {
+    flex-grow: 1;
+  }
+}
+
+.select-button {
+  flex-shrink: 0;
+}

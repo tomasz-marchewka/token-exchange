@@ -29,3 +29,26 @@ mat-chip {
     cursor: pointer;
   }
 }
+
+mat-form-field {
+  div[matformfieldlineripple] {
+    display: none;
+  }
+  .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
+    padding: 20px 24px;
+    border-radius: 16px;
+  }
+}
+
+.cdk-overlay-pane {
+  .mat-mdc-menu-panel {
+    max-width: 480px;
+  }
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+}

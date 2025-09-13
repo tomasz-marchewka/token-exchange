@@ -1,0 +1,27 @@
+<tex-button [appearance]="appearance()" [matMenuTriggerFor]="menu">
+  @if(selectedValue()){<tex-icon icon="crypto_icon" />}{{
+    selectedValue()?.name || selectLabel()
+  }}
+  <tex-icon icon="keyboard_arrow_down" />
+</tex-button>
+<mat-menu #menu="matMenu">
+  <div class="select-wrapper">
+    <div class="select-wrapper__label">
+      {{ selectLabel() }}
+      <button><tex-icon icon="close" /></button>
+    </div>
+    @for(item of selectItems(); track item.id) {
+    <button class="select-wrapper__button" (click)="onValueSelected(item)">
+      <tex-icon icon="crypto_icon" />
+      <div class="select-wrapper__button-content">
+        <div class="select-wrapper__button-name">{{ item.name }}</div>
+        @if(item.description){
+        <div class="select-wrapper__button-description">
+          {{ item.description }}
+        </div>
+        }
+      </div>
+    </button>
+    }
+  </div>
+</mat-menu>

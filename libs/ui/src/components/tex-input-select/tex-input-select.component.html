@@ -1,0 +1,20 @@
+<mat-form-field class="form-field-wrapper" appearance="fill">
+  <mat-label>{{ label() }}</mat-label>
+  <div class="input-wrapper">
+    <input
+      matInput
+      [placeholder]="placeholder()"
+      [type]="type()"
+      [readonly]="readonly()"
+      [ngModel]="value()"
+      (ngModelChange)="setSelectValue($event)"
+    />
+    <tex-select
+      class="select-button"
+      [selectLabel]="selectLabel()"
+      [selectItems]="selectItems()"
+      [selectedValue]="selectedValue()"
+      (selectedValueChange)="setSelectValue($event)"
+    />
+  </div>
+</mat-form-field>
