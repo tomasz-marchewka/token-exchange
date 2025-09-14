@@ -4,4 +4,5 @@ export const IconsList = [
   'close',
   'search',
   'arrow_down',
+  'ethereum',
 ] as const;

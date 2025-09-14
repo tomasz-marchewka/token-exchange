@@ -1,0 +1,43 @@
+@use 'libs/ui/src/theme/colors.scss' as *;
+
+:host {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.when-input {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.sell-input {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cta-button {
+  width: 100%;
+  display: block;
+  margin-top: 16px;
+}
+
+.swap-button {
+  cursor: pointer;
+  background: $neutral;
+  width: 52px;
+  height: 52px;
+  color: $primary-500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid $base;
+  border-radius: 8px;
+  margin-top: -28px;
+  z-index: 2;
+  left: calc(50% - 26px);
+  position: absolute;
+}
+
+.exchange-rate-info {
+  text-align: center;
+}

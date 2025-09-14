@@ -25,8 +25,28 @@ export const Sell: Story = {
     value: 0,
     selectLabel: 'Select token',
     selectItems: [
-      { id: 1, name: 'ADA', description: 'Cardano' },
-      { id: 2, name: 'BTC', description: 'Bitcoin' },
+      { id: 1, name: 'ADA', description: 'Cardano', icon: 'crypto_icon' },
+      { id: 2, name: 'BTC', description: 'Bitcoin', icon: 'crypto_icon' },
+      { id: 3, name: 'ETH', description: 'Ethereum', icon: 'ethereum' },
+    ],
+  },
+};
+
+export const When: Story = {
+  args: {
+    label: 'When 1 ETH is worth',
+    value: 3762.88,
+    readonlySelect: true,
+    selectedValue: {
+      id: 3,
+      name: 'ETH',
+      description: 'Ethereum',
+      icon: 'ethereum',
+    },
+    selectItems: [
+      { id: 1, name: 'ADA', description: 'Cardano', icon: 'crypto_icon' },
+      { id: 2, name: 'BTC', description: 'Bitcoin', icon: 'crypto_icon' },
+      { id: 3, name: 'ETH', description: 'Ethereum', icon: 'ethereum' },
     ],
   },
 };
