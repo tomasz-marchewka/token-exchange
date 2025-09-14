@@ -26,8 +26,14 @@ export const CryptoIcon: Story = {
   },
 };
 
-export const ArrowDownIcon: Story = {
+export const KeyboardArrowDownIcon: Story = {
   args: {
     icon: 'keyboard_arrow_down',
+  },
+};
+
+export const ArrowDownIcon: Story = {
+  args: {
+    icon: 'arrow_down',
   },
 };
