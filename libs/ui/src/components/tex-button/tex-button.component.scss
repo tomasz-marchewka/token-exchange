@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
 
   @include mat.button-overrides(
     (
@@ -44,6 +45,10 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
+    }
+
+    button {
+      width: 100%;
     }
   }
 }

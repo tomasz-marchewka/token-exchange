@@ -3,4 +3,5 @@ export const IconsList = [
   'keyboard_arrow_down',
   'close',
   'search',
+  'arrow_down',
 ] as const;

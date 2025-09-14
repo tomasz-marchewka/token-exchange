@@ -1,0 +1,10 @@
+@use 'libs/ui/src/theme/colors.scss' as *;
+
+:host {
+  font-weight: 400;
+  color: $text-high;
+}
+
+.usd-rate {
+  color: $text-mid;
+}

@@ -22,14 +22,14 @@ const MOCK_ITEMS: SelectItem[] = [
   standalone: true,
   imports: [TexInputSelectComponent],
   template: `
-    <tex-input
+    <tex-select-input
       [label]="'Amount'"
       [placeholder]="'0.0'"
       [(value)]="inputValue"
       [selectLabel]="'Crypto'"
       [selectItems]="selectItems"
       [(selectedValue)]="selectValue"
-    ></tex-input>
+    ></tex-select-input>
   `,
 })
 class TestHostComponent {

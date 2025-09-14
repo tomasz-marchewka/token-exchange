@@ -1,5 +1,9 @@
-@use 'libs/ui/src//theme/theme.scss' as *;
-@use 'libs/ui/src//theme/colors.scss' as *;
+@use 'libs/ui/src/theme/theme.scss' as *;
+@use 'libs/ui/src/theme/colors.scss' as *;
+
+* {
+  font-family: Roboto;
+}
 
 body {
   background: $base;

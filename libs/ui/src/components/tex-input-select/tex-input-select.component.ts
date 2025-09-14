@@ -11,7 +11,7 @@ import { TexSelectComponent } from '../tex-select/tex-select.component';
 import { SelectItem } from '../../types/select.types';
 
 @Component({
-  selector: 'tex-input',
+  selector: 'tex-select-input',
   imports: [CommonModule, FormsModule, MatInputModule, TexSelectComponent],
   templateUrl: './tex-input-select.component.html',
   styleUrl: './tex-input-select.component.scss',
