@@ -53,3 +53,11 @@ input[type='number'] {
 .select-button {
   flex-shrink: 0;
 }
+
+.select-readonly {
+  color: $text-high;
+  display: flex;
+  font-size: 16px;
+  gap: 8px;
+  padding: 12px 16px;
+}

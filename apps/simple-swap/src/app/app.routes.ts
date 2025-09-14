@@ -9,7 +9,7 @@ export const appRoutes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'market' },
   {
     path: 'market',
-    loadComponent: () => import('./features/market/containers/market'),
+    loadComponent: () => import('./features/market/container/market'),
     data: { preload: false },
     providers: [
       provideState({ name: marketFeatureKey, reducer: marketReducer }),
@@ -18,7 +18,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'limit',
-    loadComponent: () => import('./features/limit/limit'),
+    loadComponent: () => import('./features/limit/container/limit'),
     data: { preload: false },
   },
 ];

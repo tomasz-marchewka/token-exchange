@@ -9,6 +9,14 @@
       [ngModel]="value()"
       (ngModelChange)="setSelectValue($event)"
     />
+    @if(readonlySelect()) {
+    <div class="select-readonly">
+      @let iconName = selectedValue()?.icon; @if(iconName) {
+      <tex-icon [icon]="iconName" />
+      }
+      {{ selectedValue()?.name }}
+    </div>
+    } @else {
     <tex-select
       class="select-button"
       [selectLabel]="selectLabel()"
@@ -16,5 +24,6 @@
       [selectedValue]="selectedValue()"
       (selectedValueChange)="setSelectValue($event)"
     />
+    }
   </div>
 </mat-form-field>

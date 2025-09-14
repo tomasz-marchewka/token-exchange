@@ -23,8 +23,9 @@ export const Select: Story = {
   args: {
     selectLabel: 'Select token',
     selectItems: [
-      { id: 1, name: 'ADA', description: 'Cardano' },
-      { id: 2, name: 'BTC', description: 'Bitcoin' },
+      { id: 1, name: 'ADA', description: 'Cardano', icon: 'crypto_icon' },
+      { id: 2, name: 'BTC', description: 'Bitcoin', icon: 'crypto_icon' },
+      { id: 3, name: 'ETH', description: 'Ethereum', icon: 'ethereum' },
     ],
   },
 };
