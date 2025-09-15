@@ -1,4 +1,5 @@
 <p>
-  1 {{baseCurrency()}} = {{targetValue()}} {{targetCurrency()}}
+  1 {{baseCurrency()}} = {{targetValue() | number : '1.0-3' }}
+  {{targetCurrency()}}
   <span class="usd-rate">({{usdValue() | currency: "USD" }})</span>
 </p>

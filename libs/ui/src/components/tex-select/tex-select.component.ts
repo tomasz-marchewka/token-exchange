@@ -22,7 +22,7 @@ import { SelectItem } from '../../types/select.types';
 export class TexSelectComponent {
   selectLabel = input.required<string>();
   selectItems = input.required<SelectItem[]>();
-  selectedValue = model<SelectItem | undefined>();
+  selectedValue = model<SelectItem>();
 
   appearance = computed<ButtonAppearance>(() =>
     this.selectedValue() ? 'outlined' : 'filled'

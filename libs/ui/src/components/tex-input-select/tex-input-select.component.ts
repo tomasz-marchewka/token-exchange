@@ -26,18 +26,21 @@ import { TexIconComponent } from '../tex-icon/tex-icon.component';
 })
 export class TexInputSelectComponent {
   label = input.required<string>();
+  disabled = input<boolean>(false);
   type = input<string>('number');
   readonly = input<boolean>(false);
   placeholder = input<string>('');
   value = model<number>();
 
   selectLabel = input<string>('Select value');
-  selectedValue = model<SelectItem | undefined>();
+  selectedValue = model<SelectItem>();
   selectItems = input.required<SelectItem[]>();
   readonlySelect = input<boolean>(false);
 
-  setValue(newValue: number) {
-    this.value.set(newValue);
+  setValue(newValue: string) {
+    const value = parseInt(newValue);
+
+    this.value.set(!isNaN(value) ? value : 0);
   }
 
   setSelectValue(item: SelectItem | undefined) {

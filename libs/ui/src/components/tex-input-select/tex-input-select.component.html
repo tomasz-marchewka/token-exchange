@@ -3,11 +3,12 @@
   <div class="input-wrapper">
     <input
       matInput
+      [disabled]="disabled()"
       [placeholder]="placeholder()"
       [type]="type()"
       [readonly]="readonly()"
       [ngModel]="value()"
-      (ngModelChange)="setSelectValue($event)"
+      (ngModelChange)="setValue($event)"
     />
     @if(readonlySelect()) {
     <div class="select-readonly">

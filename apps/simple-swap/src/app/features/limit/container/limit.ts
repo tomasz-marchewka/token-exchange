@@ -1,18 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-  TexButtonComponent,
-  TexIconComponent,
-  TexInputSelectComponent,
-} from 'ui';
-import { ExchangeRateInfo } from '../../../shared/components/exchange-rate-info/exchange-rate-info';
+import { TexButtonComponent, TexInputSelectComponent } from 'ui';
+import { ExchangeInputsComponent } from '../../../shared/components/exchange-inputs/exchange-inputs';
 
 @Component({
   selector: 'ss-limit',
   imports: [
     TexInputSelectComponent,
-    TexIconComponent,
     TexButtonComponent,
-    ExchangeRateInfo,
+    ExchangeInputsComponent,
   ],
   templateUrl: './limit.html',
   styleUrl: './limit.scss',
