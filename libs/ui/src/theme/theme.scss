@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @use './palettes.scss' as *;
+@use './colors.scss' as *;
 
 // Include the common styles for Angular Material.
 @include mat.core();
@@ -43,6 +44,10 @@ mat-form-field {
   .mat-mdc-form-field-subscript-wrapper {
     height: 0;
   }
+
+  .mdc-text-field--disabled {
+    pointer-events: all;
+  }
 }
 
 .cdk-overlay-pane {
@@ -56,4 +61,13 @@ button {
   background: none;
   outline: none;
   border: none;
+}
+
+mat-dialog-container {
+  mat-dialog-content.mat-mdc-dialog-content {
+    background: $neutral;
+  }
+  .mdc-dialog__surface {
+    border-radius: 16px;
+  }
 }

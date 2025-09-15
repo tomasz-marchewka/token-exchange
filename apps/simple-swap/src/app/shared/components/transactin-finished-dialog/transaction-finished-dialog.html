@@ -1,0 +1,28 @@
+<tex-dialog>
+  <div class="header">
+    <tex-icon icon="check" />
+    <h2 class="header__text">Transaction finished!</h2>
+  </div>
+
+  <div class="transaction-details">
+    <p>Transaction info:</p>
+    <p>
+      <span>Buy</span
+      ><span>{{data.buyAmount | number : '1.0-3'}} {{data.buyToken}}</span>
+    </p>
+    <p>
+      <span>Sell</span
+      ><span>{{data.sellAmount | number : '1.0-3'}} {{data.sellToken}}</span>
+    </p>
+    <p>
+      <span>Price</span
+      ><span
+        >1 {{data.sellToken}} = {{data.buyAmount | number : '1.0-3'}}
+        {{data.buyToken}} ({{data.usdRate | number : '1.0-3'}})</span
+      >
+    </p>
+  </div>
+  <tex-button class="close-button" appearance="filled" (clicked)="closeDialog()"
+    >Close</tex-button
+  >
+</tex-dialog>

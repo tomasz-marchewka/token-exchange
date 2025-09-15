@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+@use '../../theme/colors.scss' as *;
+
+:host {
+  min-width: 480px;
+  @include mat.dialog-overrides(
+    (
+      container-color: $neutral,
+    )
+  );
+}

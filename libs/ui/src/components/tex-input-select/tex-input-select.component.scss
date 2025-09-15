@@ -6,8 +6,11 @@
     (
       hover-state-layer-opacity: 0,
       filled-container-color: $neutral,
+      filled-disabled-container-color: $neutral,
       filled-input-text-color: $text-high,
+      filled-disabled-label-text-color: $text-high,
       filled-focus-label-text-color: $text-high,
+      filled-disabled-input-text-color: $text-high,
       filled-label-text-color: $text-high,
       filled-caret-color: $text-high,
       filled-label-text-size: 18px,
@@ -40,6 +43,9 @@ input[type='number'] {
         border: 1px solid $primary-500;
       }
     }
+  }
+  ::ng-deep.mat-mdc-text-field-wrapper {
+    border: 1px solid $base;
   }
 }
 

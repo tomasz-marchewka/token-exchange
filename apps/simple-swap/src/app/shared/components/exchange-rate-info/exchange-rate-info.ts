@@ -1,4 +1,4 @@
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, DecimalPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,7 +10,7 @@ import { CurrencyExchangeService } from '../../services/currency-exchange/curren
 
 @Component({
   selector: 'ss-exchange-rate-info',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, DecimalPipe],
   templateUrl: './exchange-rate-info.html',
   styleUrl: './exchange-rate-info.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

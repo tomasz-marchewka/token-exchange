@@ -5,27 +5,16 @@
   [selectItems]="[]"
   [value]="0"
 />
-<tex-select-input
-  class="sell-input"
-  label="Sell"
-  selectLabel="Select token"
-  [selectItems]="[]"
-  [value]="0"
-/>
-<button class="swap-button"><tex-icon icon="arrow_down" /></button>
-<tex-select-input
-  label="Buy"
-  selectLabel="Select token"
-  [selectItems]="[]"
-  [value]="0"
-/>
+
+<ss-exchange-inputs [tokens]="[]" [buyAmount]="0" [sellAmount]="0" />
+
 <tex-button class="cta-button" appearance="filled" [disabled]="true"
   >Sell {{"ETH"}} for {{"BTC"}}</tex-button
 >
-<ss-exchange-rate-info
+<!-- <ss-exchange-rate-info
   class="exchange-rate-info"
   [baseCurrency]="'ETH'"
   [targetCurrency]="'BTC'"
   [rate]="0.032"
   [rateToUsd]="3762.88"
-/>
+/> -->

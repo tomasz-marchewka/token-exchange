@@ -1,0 +1,26 @@
+@use 'libs/ui/src/theme/colors.scss' as *;
+
+:host {
+}
+
+.sell-input {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.swap-button {
+  cursor: pointer;
+  background: $neutral;
+  width: 52px;
+  height: 52px;
+  color: $primary-500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid $base;
+  border-radius: 8px;
+  margin-top: -28px;
+  z-index: 2;
+  left: calc(50% - 26px);
+  position: absolute;
+}

@@ -1,24 +1,34 @@
-<tex-select-input
-  class="sell-input"
-  label="Sell"
-  selectLabel="Select token"
-  [selectItems]="[]"
-  [value]="0"
+@let tokens = tokens$ | async; @let sellAmount = sellAmount$ | async; @let
+sellToken = sellToken$ | async; @let buyToken = buyToken$ | async; @let
+buyAmount = buyAmount$ | async; @if(tokens && sellAmount !== null && buyAmount
+!== null) {
+<ss-exchange-inputs
+  [tokens]="tokens"
+  [sellAmount]="sellAmount"
+  [buyAmount]="buyAmount"
+  [sellToken]="sellToken!"
+  [buyToken]="buyToken!"
+  (sellTokenChange)="sellTokenChange($event)"
+  (buyTokenChange)="buyTokenChange($event)"
+  (sellAmountChange)="sellAmountChange($event)"
+  (swapTokensChange)="swapTokensChange()"
 />
-<button class="swap-button"><tex-icon icon="arrow_down" /></button>
-<tex-select-input
-  label="Buy"
-  selectLabel="Select token"
-  [selectItems]="[]"
-  [value]="0"
-/>
-<tex-button class="cta-button" appearance="filled" [disabled]="true"
-  >Sell {{"ETH"}} for {{"BTC"}}</tex-button
+}
+
+<tex-button
+  class="cta-button"
+  appearance="filled"
+  [disabled]="!buyAmount"
+  (clicked)="sell()"
+  >Sell {{sellToken?.name}} for {{buyToken?.name}}</tex-button
 >
+@let usdTokenRate = usdTokenRate$ | async; @let tokenRate = tokenRate$ | async;
+@if(sellToken && buyToken && usdTokenRate && tokenRate) {
 <ss-exchange-rate-info
   class="exchange-rate-info"
-  [baseCurrency]="'ETH'"
-  [targetCurrency]="'BTC'"
-  [rate]="0.032"
-  [rateToUsd]="3762.88"
+  [baseCurrency]="sellToken.name"
+  [targetCurrency]="buyToken.name"
+  [rate]="tokenRate"
+  [rateToUsd]="usdTokenRate"
 />
+}

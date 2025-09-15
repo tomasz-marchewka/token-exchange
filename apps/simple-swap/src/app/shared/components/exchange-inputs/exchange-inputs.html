@@ -1,0 +1,22 @@
+<tex-select-input
+  class="sell-input"
+  label="Sell"
+  selectLabel="Select token"
+  [selectItems]="tokens()"
+  [value]="sellAmount()"
+  [selectedValue]="sellToken()"
+  (valueChange)="setSellAmount($event)"
+  (selectedValueChange)="setSelectedSellToken($event)"
+/>
+<button class="swap-button">
+  <tex-icon icon="arrow_down" (click)="swapTokens()" />
+</button>
+<tex-select-input
+  label="Buy"
+  selectLabel="Select token"
+  [disabled]="true"
+  [selectItems]="tokens()"
+  [value]="buyAmount()"
+  [selectedValue]="buyToken()"
+  (selectedValueChange)="setSelectedBuyToken($event)"
+/>
